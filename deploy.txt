@@ -1,0 +1,9 @@
+1. Tạo repo
+2. git repo:
+    git clone https://github.com/sorimachi-tech/signin.git
+3. Sao chép src vào repo https://github.com/sorimachi-tech/signin.git
+4. ng build --output-path docs --base-href /signin
+5. project init
+6. git push
+7. Login vào repo account github -> Settings -> Pages -> main -> docs -> save
+8. Vào thư mục docs/index.html -> edit dòng 6 <base href="/signin"> thành <base href="https://sorimachi-tech.github.io/signin">

@@ -1,0 +1,119 @@
+<div class="vui-example">
+    <h1>Sign In
+        <div style="
+                display: flex;
+                justify-content: center;
+                padding: 0px 0;
+        ">
+            <!-- <a href="https://www.npmjs.com/package/ng-voice-inputs">
+                <img src="https://img.shields.io/npm/v/ng-voice-inputs.svg" />
+            </a> -->
+        </div>
+    </h1>
+
+    <div class="main-container container">
+        <form class="section left-section" #form="ngForm" (ngSubmit)="submitForm(form)">
+            <ng-voice-input (onValueChange)="onResponse($event)" [style]="styleOpts"></ng-voice-input>
+            <!-- <div class="row">
+                <mat-form-field class="col-6">
+                    <mat-label>Choose from date</mat-label>
+                    <input matInput [matDatepicker]="picker" [vuiInput]="optionsDate" name="fromDate" ngModel>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker ></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field  class="col-6">
+                    <mat-label>Choose to date</mat-label>
+                    <input matInput [matDatepicker]="pickerT" [vuiInput]="optionsDate" name="toDate" ngModel>
+                    <mat-datepicker-toggle matSuffix [for]="pickerT"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerT ></mat-datepicker>
+                </mat-form-field>
+            </div> -->
+            <div class="row">
+                <mat-form-field  class="col-6">
+                    <mat-label>Identification</mat-label>
+                    <input matInput type="text" [vuiInput]="optionsText" name="firstName" ngModel>
+                </mat-form-field>
+                <mat-form-field  class="col-6">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="text" [vuiInput]="optionsText" name="lastName" ngModel>
+                </mat-form-field>
+            </div>
+
+            <!-- <div class="row">
+                <mat-form-field  class="col-6">
+                    <mat-label>Age</mat-label>
+                    <input matInput type="text" [vuiInput]="optionsNumber" name="age" ngModel>
+                </mat-form-field>
+
+                <mat-form-field  class="col-6">
+                    <mat-label>Occupation</mat-label>
+                    <input matInput type="text" [vuiInput]="optionsText" name="occupation" ngModel>
+                </mat-form-field>
+                
+            </div> -->
+            <!-- <div class="row">
+                <mat-form-field class="col-6">
+                    <mat-label>Address line 1</mat-label>
+                    <textarea matInput type="text" [vuiInput]="optionsAddress" name="address-line1"></textarea>
+                </mat-form-field>  
+                <mat-form-field class="col-6">
+                    <mat-label>Address line 2</mat-label>
+                    <textarea matInput type="text" [vuiInput]="optionsAddress" name="address-line2"></textarea>
+                </mat-form-field>    
+            </div> -->
+            <button mat-raised-button [vuiInput]="" class="submit">Submit</button>
+
+            <a href="https://sorimachi-tech.github.io/signup" target="_blank" rel="noopener noreferrer" class="signup">Sign up</a>
+
+
+            <div class="container form-submit-data col-md-20" *ngIf="formData">
+                <h5>Form Submit Details</h5>
+                <div class="row">
+                    <div class="col-10">
+                        <label>Identification:</label>
+                        <span> {{formData?.firstName}}</span>
+                    </div>
+                    <!-- <div class="col-6">
+                        <label>End Date</label>
+                        <span>{{formData?.endDate}}</span>
+                    </div> -->
+                </div>
+                <div class="row">
+                    <div class="col-10">
+                        <label>Password:</label>
+                        <span> {{formData?.lastName}}</span>
+                    </div>
+                    <!-- <div class="col-6">
+                        <label>Last Name</label>
+                        <span>{{formData?.lastName}}</span>
+                    </div> -->
+                </div>
+            </div>
+            
+        </form>
+
+        <div class="section right-section">
+            <h3>Cách sử dụng</h3>
+            <ul>
+                <li>Nhấp vào <b>Mic (<i class="icon icon-small icon-mic-blue"></i>)</b> nút, để bắt đầu nhận dạng giọng nói</li>
+                <!-- <li>Nói gì đó như
+                    <ul>
+                        <li>'January 21st 2021'</li>
+                        <li>'August 15th 1947'</li>
+                        <li>'November 27 2021'</li>
+                    </ul>
+                </li> -->
+                <li>Bạn có thể điều hướng tiêu điểm đến trường nhập tiếp theo bằng cách nói <b>'go to next'</b> hoặc <b>'next'</b></li>
+                <li>Và quay lại trường nhập liệu trước đó bằng cách nói <b>'go to previous'</b></li>
+                <li>Sau khi nhập xong tất cả các trường, hãy điều hướng đến nút <b>Submit</b> bằng cách nói <b>'go to last'</b> và nói <b>'submit' hoặc 'click'</b> để gửi biểu mẫu</li>
+                <!-- <li><b>Page Scroll Feature</b>: 
+                <li>Say <b>Scroll Down</b> to scroll page downwards. And <b>Scroll Up</b> to scroll upwards. Also supports <b>Left</b> & <b>Right</b></li>
+                <li>Say <b>Continue Scrolling</b> to scroll continuously downwards / upwards.</li> -->
+                
+                <li>Bạn có thể DỪNG nhận dạng giọng nói bằng cách nói <b>'stop'</b> hoặc nhấp lại vào biểu tượng micrô.</li>
+            </ul>
+
+            <!-- <div><i>NOTE:</i> For the input type <b>'address'</b>, please use prefixes like <b>'go'</b> or <b>'goto'</b> or <b>'switch to'</b> without fail</div> -->
+        </div>
+    </div>
+</div>
